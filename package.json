@@ -1,0 +1,19 @@
+{
+  "name": "telegram-captcha-bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "admin": "node adminPanel.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "redis": "^4.6.5",
+    "sharp": "^0.34.2",
+    "svg-captcha": "^1.4.0",
+    "telegraf": "^4.12.2"
+  }
+}

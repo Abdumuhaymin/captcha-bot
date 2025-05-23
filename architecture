@@ -1,0 +1,9 @@
+telegram-captcha-bot/
+├── node_modules/
+├── .env
+├── index.js                 # Bot asosiy kodi
+├── package.json
+├── README.md
+└── utils/
+    ├── captchaGenerator.js  # CAPTCHA yaratish funksiyasi
+    └── sessionManager.js    # Session boshqaruvi (redis wrapper)

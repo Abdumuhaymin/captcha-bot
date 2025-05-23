@@ -1,0 +1,30 @@
+# Node modules papkasi (katta hajmli, avtomatik o‘rnatiladi)
+node_modules/
+
+# Mahalliy konfiguratsiya va maxfiy ma'lumotlar
+.env
+
+# Log fayllar
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Operatsion tizimga tegishli fayllar
+.DS_Store
+Thumbs.db
+
+# IDE/editor sozlamalari
+.vscode/
+.idea/
+
+# Optional: OS/CLI cache files
+*.swp
+*.swo
+
+# Test coverage
+coverage/
+
+# Paket lock fayli (agar siz `yarn` ishlatayotgan bo‘lsangiz `package-lock.json`ni o‘chiring)
+package-lock.json
