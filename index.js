@@ -63,7 +63,7 @@ bot.on("callback_query", async (ctx) => {
       process.env.CHANNEL_ID,
       {
         member_limit: 1,
-        expire_date: Math.floor(Date.now() / 1000) + 600, // 10 daqiqa
+        expire_date: Math.floor(Date.now() / 1000) + 10, // 10 daqiqa
         name: `captcha-${userId}`,
       }
     );
