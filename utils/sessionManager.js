@@ -1,13 +1,13 @@
-const sessions = new Map();
+const session = new Map();
 
-export function saveCaptcha(userId, text) {
-  sessions.set(userId, text);
+export async function saveCaptcha(userId, value) {
+  session.set(userId, value);
 }
 
-export function getCaptcha(userId) {
-  return sessions.get(userId);
+export async function getCaptcha(userId) {
+  return session.get(userId);
 }
 
-export function deleteCaptcha(userId) {
-  sessions.delete(userId);
+export async function deleteCaptcha(userId) {
+  session.delete(userId);
 }

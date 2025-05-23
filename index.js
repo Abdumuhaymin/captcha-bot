@@ -59,12 +59,21 @@ bot.on("callback_query", async (ctx) => {
   }
 
   if (selected === expected) {
+    const invite = await ctx.telegram.createChatInviteLink(
+      process.env.CHANNEL_ID,
+      {
+        member_limit: 1,
+        expire_date: Math.floor(Date.now() / 1000) + 600, // 10 daqiqa
+        name: `captcha-${userId}`,
+      }
+    );
+
     await ctx.editMessageCaption(
       "✅ To‘g‘ri! Kanalga qo‘shilish uchun tugmani bosing:",
       {
         reply_markup: {
           inline_keyboard: [
-            [{ text: "📥 Kanalga qo‘shilish", url: process.env.CHANNEL_LINK }],
+            [{ text: "📥 Kanalga qo‘shilish", url: invite.invite_link }],
           ],
         },
       }

@@ -4,7 +4,7 @@ import sharp from "sharp";
 export async function generateCaptcha() {
   const captcha = svgCaptcha.create({
     size: 6,
-    noise: 3,
+    noise: 2,
     color: true,
     background: "#ccf",
   });
@@ -13,6 +13,6 @@ export async function generateCaptcha() {
 
   return {
     imageBuffer: pngBuffer,
-    text: captcha.text.toUpperCase(), // Yagona formatda solishtirish uchun
+    text: captcha.text.toUpperCase(),
   };
 }
