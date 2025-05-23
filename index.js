@@ -11,7 +11,6 @@ dotenv.config();
 
 const bot = new Telegraf(process.env.BOT_TOKEN);
 
-// Tasodifiy tugmalar yaratish
 function generateOptions(correctAnswer) {
   const fakeAnswers = new Set();
   while (fakeAnswers.size < 3) {
@@ -20,7 +19,7 @@ function generateOptions(correctAnswer) {
   }
 
   const options = [...fakeAnswers, correctAnswer];
-  return options.sort(() => Math.random() - 0.5); // Shuffle
+  return options.sort(() => Math.random() - 0.5);
 }
 
 bot.start(async (ctx) => {
@@ -63,7 +62,7 @@ bot.on("callback_query", async (ctx) => {
       process.env.CHANNEL_ID,
       {
         member_limit: 1,
-        expire_date: Math.floor(Date.now() / 1000) + 10, // 10 daqiqa
+        expire_date: Math.floor(Date.now() / 1000) + 10,
         name: `captcha-${userId}`,
       }
     );
@@ -78,7 +77,7 @@ bot.on("callback_query", async (ctx) => {
         },
       }
     );
-    await ctx.answerCbQuery(); // Callbackni tozalash uchun
+    await ctx.answerCbQuery();
     deleteCaptcha(userId);
   } else {
     await ctx.answerCbQuery("❌ Noto‘g‘ri javob.");
